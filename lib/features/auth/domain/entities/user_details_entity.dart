@@ -12,7 +12,7 @@ class UserDetailsEntity extends Equatable {
     this.name,
     this.email,
     this.password,
-    this.status,
+    this.status = "Hello user!",
   });
 
   @override

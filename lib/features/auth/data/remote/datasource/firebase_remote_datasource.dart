@@ -1,7 +1,7 @@
 import '../../../domain/entities/user_details_entity.dart';
 import '../../../domain/entities/user_posts_entity.dart';
 
-abstract class FirebaseRepository {
+abstract class FirebaseRemoteDatasource {
   Future<bool> isSignIn();
   Future<void> signIn(UserDetailsEntity userDetailsEntity);
   Future<void> signUp(UserDetailsEntity userDetailsEntity);
