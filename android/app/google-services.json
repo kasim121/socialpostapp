@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "757624174291",
+    "project_id": "techi-social-app",
+    "storage_bucket": "techi-social-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757624174291:android:e810e5885575a9e9508626",
+        "android_client_info": {
+          "package_name": "com.example.tisocial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKM_Qf4ku4ugH1_Lz8Wj0Ey-GhJ7Q6uRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757624174291:android:6657e248cee1d6f9508626",
+        "android_client_info": {
+          "package_name": "com.techi.socialap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKM_Qf4ku4ugH1_Lz8Wj0Ey-GhJ7Q6uRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
