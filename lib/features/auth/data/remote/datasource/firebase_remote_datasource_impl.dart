@@ -104,7 +104,7 @@ class FirebaseRemoteDatasourceImpl implements FirebaseRemoteDatasource {
 
   @override
   Future<void> updatePost(UserPostEntity userPostEntity) async {
-    Map<String, dynamic> postMap = Map();
+    Map<String, dynamic> postMap = {};
     final postCollectionRef = firestore
         .collection("users")
         .doc(userPostEntity.uid)
