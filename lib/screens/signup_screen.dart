@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../blocs/user_auth_bloc.dart';
+import 'package:tisocial/constants/app_colors.dart';
 
 class NewSignUpScreen extends StatefulWidget {
-  NewSignUpScreen({super.key});
+  const NewSignUpScreen({super.key});
 
   @override
   State<NewSignUpScreen> createState() => _NewSignUpScreenState();
@@ -11,9 +12,7 @@ class NewSignUpScreen extends StatefulWidget {
 
 class _NewSignUpScreenState extends State<NewSignUpScreen> {
   final TextEditingController emailController = TextEditingController();
-
   final TextEditingController passwordController = TextEditingController();
-
   final TextEditingController usernameController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
@@ -21,19 +20,14 @@ class _NewSignUpScreenState extends State<NewSignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Sign Up"),
-        centerTitle: true,
-        elevation: 0.5,
-      ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Title
               const Text(
                 "Create a New Account",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -41,14 +35,19 @@ class _NewSignUpScreenState extends State<NewSignUpScreen> {
               ),
               const SizedBox(height: 30),
 
-              // Username field
               TextFormField(
                 controller: usernameController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: "Username",
-                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.grey.shade600),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  filled: true,
+                  fillColor: Colors.grey.shade50,
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -57,16 +56,21 @@ class _NewSignUpScreenState extends State<NewSignUpScreen> {
                   return null;
                 },
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 16),
 
-              // Email field
               TextFormField(
                 controller: emailController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: "Email",
-                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.grey.shade600),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  filled: true,
+                  fillColor: Colors.grey.shade50,
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 ),
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
@@ -81,16 +85,22 @@ class _NewSignUpScreenState extends State<NewSignUpScreen> {
                   return null;
                 },
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 16),
 
-              // Password field
+              // Password TextField
               TextFormField(
                 controller: passwordController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: "Password",
-                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.grey.shade600),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  filled: true,
+                  fillColor: Colors.grey.shade50,
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 ),
                 obscureText: true,
                 validator: (value) {
@@ -105,7 +115,6 @@ class _NewSignUpScreenState extends State<NewSignUpScreen> {
               ),
               const SizedBox(height: 25),
 
-              // Sign Up button
               BlocConsumer<UserAuthBloc, AuthState>(
                 listener: (context, state) {
                   if (state is AuthSuccess) {
@@ -133,17 +142,25 @@ class _NewSignUpScreenState extends State<NewSignUpScreen> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            textStyle: const TextStyle(fontSize: 16),
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            backgroundColor: Colors.blue,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
                           ),
-                          child: const Text("Sign Up"),
+                          child: const Text(
+                            "Sign Up",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.textPrimary),
+                          ),
                         );
                 },
               ),
 
               const SizedBox(height: 20),
 
-              // Already have an account link
               Align(
                 alignment: Alignment.center,
                 child: GestureDetector(

@@ -43,12 +43,10 @@ class NewLoginScreen extends StatelessWidget {
                 filled: true,
                 fillColor: Colors.grey.shade50,
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               ),
             ),
             const SizedBox(height: 16),
-
-            // Password TextField
             TextField(
               controller: passwordController,
               obscureText: true,
@@ -62,12 +60,10 @@ class NewLoginScreen extends StatelessWidget {
                 filled: true,
                 fillColor: Colors.grey.shade50,
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               ),
             ),
             const SizedBox(height: 20),
-
-            // BlocConsumer for Login State
             BlocConsumer<UserAuthBloc, AuthState>(
               listener: (context, state) {
                 if (state is AuthSuccess) {
@@ -80,7 +76,7 @@ class NewLoginScreen extends StatelessWidget {
               },
               builder: (context, state) {
                 if (state is AuthLoading) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
                 return ElevatedButton(
                   onPressed: () {
@@ -107,7 +103,6 @@ class NewLoginScreen extends StatelessWidget {
               },
             ),
             const SizedBox(height: 30),
-
             Align(
               alignment: Alignment.center,
               child: GestureDetector(

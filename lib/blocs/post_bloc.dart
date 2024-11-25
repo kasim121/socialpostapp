@@ -75,7 +75,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
           return data;
         }).toList();
 
-        print('Fetched posts: $posts'); // Debugging logs
+        print('Fetched posts: $posts');
         emit(PostLoaded(posts));
       } catch (e) {
         emit(PostError(e.toString()));

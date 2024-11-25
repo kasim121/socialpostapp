@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
             initialRoute: isUserLoggedIn ? '/home' : '/login',
             routes: {
               '/login': (_) => NewLoginScreen(),
-              '/signup': (_) => NewSignUpScreen(),
+              '/signup': (_) => const NewSignUpScreen(),
               '/home': (_) => const NewHomeScreen(),
             },
           ),
