@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../config/themes/app_colors.dart';
-import '../../../../config/themes/app_text_style.dart';
+import '../constants/app_colors.dart';
+import '../constants/app_text_style.dart';
+
+
 
 class CustomLoginButton extends StatelessWidget {
   final String text;

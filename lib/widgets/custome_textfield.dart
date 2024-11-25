@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../config/themes/app_colors.dart';
-import '../../../../config/themes/app_text_style.dart';
+import '../constants/app_colors.dart';
+import '../constants/app_text_style.dart';
 
 class CustomTextField extends StatelessWidget {
   final bool isPassword;
@@ -18,7 +18,7 @@ class CustomTextField extends StatelessWidget {
     this.onTogglePasswordVisibility,
     this.keyboardType = TextInputType.text,
     this.textAlign = TextAlign.start,
-    required String hintText,
+    required String hintText, required TextEditingController controller,
   }) : super(key: key);
 
   @override
